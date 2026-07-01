@@ -15,3 +15,4 @@ Menu interativo no terminal
 Organização do código utilizando Programação Orientada a Objetos (POO)
 
 # Demonstração 📷
+![Menu do sistema](exemplo.png)
