@@ -1,6 +1,6 @@
-## Cadastro de alunos utilizando java 📊
+## Cadastro de Alunos em Java 🎓
 
-#Sobre o projeto: 
+# Sobre o projeto: 
 Desenvolvi este projeto com o objetivo de praticar os conceitos de Programação Orientada a Objetos (POO) em Java, implementando um sistema simples de cadastro de alunos.
 
 # Tecnologias utilizadas 🛠️
