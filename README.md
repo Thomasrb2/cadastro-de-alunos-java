@@ -1,18 +1,18 @@
-## Cadastro de Alunos em Java 🎓
+# Cadastro de Alunos em Java 🎓
 
-# Sobre o projeto: 
+## Sobre o projeto: 
 Desenvolvi este projeto com o objetivo de praticar os conceitos de Programação Orientada a Objetos (POO) em Java, implementando um sistema simples de cadastro de alunos.
 
-# Tecnologias utilizadas 🛠️
+## Tecnologias utilizadas 🛠️
 Java
 Visual Studio Code
 
-# Funcionalidades ⚙️
+## Funcionalidades ⚙️
 Cadastro de novos alunos
 Consulta de alunos cadastrados
 Armazenamento dos alunos utilizando ArrayList
 Menu interativo no terminal
 Organização do código utilizando Programação Orientada a Objetos (POO)
 
-# Demonstração 📷
+## Demonstração 📷
 ![Menu do sistema](imagem/exemplo.png)
