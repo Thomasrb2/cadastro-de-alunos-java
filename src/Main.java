@@ -1,85 +1,88 @@
-//Um projeto simples em Java para colocar no Github - Thomas
-//Eu fiz no VScode, mas eu uso geralmente o intelliJ para programar em java
+import java.util.ArrayList;
 
-public class Main{
+public class Main {
     public static void main(String[] args) {
-      
-      /* criei uma classe para o Scanner, acho legal a ideia
-      do Java nos permitir de deixarmos tudo organizado */
-        
-        System.out.println("Qual é seu nome? ");
-        String nome = Leitura.lerTexto();
-        System.out.println("Qual sua idade? ");
-        int idade = Leitura.lerInteiro();
-        System.out.println("""
-            Olá %s, parabéns pelos seus %d anos
-                
-                """.formatted(nome,idade));
 
-        Curriculo curriculo = new Curriculo();
-        curriculo.setNome("Thomas");
-        curriculo.setIdade(22);
-        curriculo.objetivo = """
-                Sou estudante de Ads pela Unisinos e estou
-                fazendo o terceiro semestre.
-                sou focado em backend e tenho conhecimento nas linguagens Java, MySql e python
-                estou fazendo um curso da Alura para aprofundar e melhorar
-                meu desenvolvimento em Java, e no momento, estou procurando
-                uma oportunidade de estagio, para me desenvolver mais,
-                adquirir mais conhecimento e me desenvolver na aréa 
-                """;
-        
-        System.out.println("""
-                eu me chamo %s, e tenho %d anos, e esse é o meu objetivo: %s 
-                """.formatted(curriculo.getNome(), curriculo.getIdade(), curriculo.objetivo));
-                
-                /* tenho conhecimento basico em Java e estou me aprofundando todos os dias
-                conheço linguagem de repetiçao while. for, if else e switch case. */
+        ArrayList<Aluno> alunos = new ArrayList<>();
+        boolean rodando = true;
 
-                int x = 10;
-                int y = 5;
+        while (rodando) {
 
-                
-                if(x >= y){
-                    System.out.println("o numero 10 é maior que 5");
-                }
-                for (int i = 0; i <= x; i++) {
-                    System.out.println("");
-                }
-                
-                int mes = 3;
-                String nomeMes;
+            System.out.println("""
+             ---------------------------
+                 CADASTRO DE ALUNOS    
+             ---------------------------
 
-                switch(mes){
-                    case 1:
-                        nomeMes = "janeiro";
-                        break;
+            1 - Adicionar aluno
+            2 - Consultar alunos
+            3 - Sair
+            """);
 
-                    case 2:
-                        nomeMes ="fevereiro";
-                        break;
+            int opcao = Leitura.lerInteiro();
+            Leitura.lerTexto(); // limpar buffer
 
-                    case 3:
-                        nomeMes = "março";
-                        break;
-                    
-                    case 4:
-                        nomeMes = "abril";
-                        break;
+            switch (opcao) {
 
-                    default:
-                        nomeMes = "outro";
-                        break;
+                case 1:
+                    Aluno aluno = new Aluno();
 
-                }
-                System.out.println(nomeMes);
+                    System.out.print("Nome: ");
+                    aluno.setNome(Leitura.lerTexto());
 
-                
-                
-                
-                
-                
-                Leitura.fechar();
+                    System.out.print("Idade: ");
+                    aluno.setIdade(Leitura.lerInteiro());
+                    Leitura.lerTexto();
+
+                    System.out.print("Curso: ");
+                    aluno.setCurso(Leitura.lerTexto());
+
+                    System.out.print("Matrícula: ");
+                    aluno.setMatricula(Leitura.lerInteiro());
+                    Leitura.lerTexto();
+
+                    System.out.print("Semestre: ");
+                    aluno.setSemestre(Leitura.lerInteiro());
+                    Leitura.lerTexto();
+
+                    alunos.add(aluno);
+
+                    System.out.println(aluno.getNome() + " foi cadastrado com sucesso!");
+                    break;
+
+                case 2:
+                    if (alunos.isEmpty()) {
+                        System.out.println("Nenhum aluno cadastrado!");
+                    } else {
+                        for (Aluno a : alunos) {
+                            System.out.println("""
+                            -----------------------------
+                            Nome: %s
+                            Idade: %d
+                            Curso: %s
+                            Matrícula: %d
+                            Semestre: %d
+                            -----------------------------
+                            """.formatted(
+                                a.getNome(),
+                                a.getIdade(),
+                                a.getCurso(),
+                                a.getMatricula(),
+                                a.getSemestre()
+                            ));
+                        }
+                    }
+                    break;
+
+                case 3:
+                    rodando = false;
+                    System.out.println("Encerrando sistema...");
+                    break;
+
+                default:
+                    System.out.println("Opção inválida!");
+            }
+        }
+
+        Leitura.fechar();
     }
-    
 }
